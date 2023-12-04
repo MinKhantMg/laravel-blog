@@ -31,9 +31,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-success" href='{{ url("/articles/add") }}'>
-                                + Add Article
-                            </a>
+                            @auth
+                                <a class="nav-link text-success" href='{{ url("/articles/add") }}'>
+                                    + Add Article
+                                </a>
+                            @endauth
                         </li>
                     </ul>
 

@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Comment;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,7 +17,21 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Article::factory()->count(20)->create();
-        Category::factory()->count(5)->create();
         Comment::factory()->count(40)->create();
+
+        $lists = ['News','Tech','Mobile','Desktop','Web'];
+        foreach ($lists as $list)
+        {
+            Category::create(['name' => $list]);
+        }
+
+        User::factory()->create([
+            "name" => "Alice",
+            "email" => "alice@gmail.com",
+        ]);
+        User::factory()->create([
+            "name" => "Bob",
+            "email" => "bob@gmail.com",
+        ]);
     }
 }

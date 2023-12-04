@@ -28,8 +28,8 @@
                 <label class="mb-2">Category</label>
                 <select name="category_id" class="form-select">
                     @foreach($categories as $category)
-                        <option value="{{ $category['id'] }}">
-                            {{ $category['name'] }}
+                        <option value="{{ $category->id }}">
+                            {{ $category->name }}
                         </option>
                     @endforeach
                 </select>
